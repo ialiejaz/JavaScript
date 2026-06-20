@@ -6,4 +6,4 @@ accountCity = "Ctn" //variables can also be declared without using var,lat or co
 
 // prefer not to use var due to issue in block scope amd functional scope
 
-console.table([accountId,accountPassword,accountEmail,accountCity])
+console.table([accountId,typeof accountPassword,accountEmail,accountCity])
