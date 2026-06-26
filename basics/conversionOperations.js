@@ -21,7 +21,7 @@ let loggedOut = 1
 let inBoolean = Boolean(loggedIn)
 let outBoolean = Boolean(loggedOut)
 
-console.table([inBoolean,outBoolean])
+// console.table([inBoolean,outBoolean])
 
 // 1 => true; 0 => false
 // "" => false
@@ -31,4 +31,17 @@ let chak = 33
 
 let pind = Number(chak)
 
-console.table([pind,typeof pind]);
+// console.table([pind,typeof pind]);
+
+
+let x = 3;
+const y = ++x;
+
+console.log(`x:${x}, y:${y}`)
+// Expected output: "x:4, y:3"
+
+let a = 3;
+const b = ++a;
+
+console.log(`a:${a}, b:${b}`);
+// Expected output: "a:4, b:4"
