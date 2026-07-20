@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods Playground</title>
+    <style>
+        /* Modern page setup */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        /* Beautiful Responsive Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        th {
+            background-color: #34495e;
+            color: #ffffff;
+            font-weight: 600;
+            text-align: left;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eef2f5;
+            vertical-align: middle;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Styling methods column */
+        td.method-name {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        /* Select menus, Inputs, & Buttons */
+        select, input[type="text"] {
+            width: 90%;
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+            background-color: white;
+        }
+
+        select:focus, input[type="text"]:focus {
+            border-color: #3498db;
+        }
+
+        button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        /* Badges for result values */
+        .result-cell {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #f8fafc;
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: 1px dashed #cbd5e1;
+            display: inline-block;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .status-cell {
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>JavaScript String Methods Dashboard</h1>
+    <p class="subtitle">Interactive playground to learn and test how string methods behave.</p>
+
+    <h2>Tool 1: Multi-Method Selector</h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 35%;">Sentence / Source Text</th>
+                <th style="width: 15%;">Method</th>
+                <th style="width: 15%;">Action</th>
+                <th style="width: 15%;">Prompt / Input</th>
+                <th style="width: 12%;">Result</th>
+                <th style="width: 8%;">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="sentence">The quick brown fox jumps over the lazy dog.</td>
+                <td>
+                    <select id="inputMode">
+                        <option value="select">Select method</option>
+                        <option value="indexOf">indexOf()</option>
+                        <option value="at">at()</option>
+                        <option value="charcodeat">charCodeAt()</option>
+                        <option value="codepointat">codePointAt()</option>
+                        <option value="concat">concat()</option>
+                        <option value="endsWith">endsWith()</option>
+                        <option value="includes">includes()</option>
+                        <option value="IsWellFormed">isWellFormed()</option>
+                    </select>
+                </td>
+                <td>
+                    <button onclick="selectMethod()">Run</button>
+                </td>
+                <td id="prompt1">
+                    <input type="text" id="userInput" placeholder="Enter Index or String" />
+                </td>
+                <td><span class="result-cell" id="result">-</span></td>
+                <td><span class="status-cell" id="status">-</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Tool 2: Individual Method Playgrounds</h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 35%;">Sentence / Source Text</th>
+                <th style="width: 15%;">Method</th>
+                <th style="width: 15%;">Action</th>
+                <th style="width: 15%;">Prompt / Input</th>
+                <th style="width: 12%;">Result</th>
+                <th style="width: 8%;">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="arrayAt">The quick brown fox jumps over the lazy dog.</td>
+                <td class="method-name">at()</td>
+                <td><button onclick="methodAt()">Run</button></td>
+                <td><em>(Handled by Prompt)</em></td>
+                <td><span class="result-cell" id="resultAt">-</span></td>
+                <td><span class="status-cell" id="statusAt">-</span></td>
+            </tr>
+
+            <tr>
+                <td id="CharCodeAt">The quick brown fox jumps over the lazy dog.</td>
+                <td class="method-name">charCodeAt()</td>
+                <td><button onclick="methodCharCodeAt()">Run</button></td>
+                <td><input type="text" id="index3" placeholder="Enter Index"></td>
+                <td><span class="result-cell" id="result3">-</span></td>
+                <td><span class="status-cell" id="status3">-</span></td>
+            </tr>
+
+            <tr>
+                <td id="option">1😊 The quick brown fox jumps over the lazy dog.</td>
+                <td class="method-name">codePointAt()</td>
+                <td><button onclick="methodCodePointAt()">Run</button></td>
+                <td><input type="text" id="index4" placeholder="Enter Index"></td>
+                <td><span class="result-cell" id="result4">-</span></td>
+                <td><span class="status-cell" id="status4">-</span></td>
+            </tr>
+
+            <tr>
+                <td id="sentenceEndsWith">The quick brown fox jumps over the lazy dog.</td>
+                <td class="method-name">endsWith()</td>
+                <td><button onclick="methodEndsWith()">Run</button></td>
+                <td><em>(Handled by Prompt)</em></td>
+                <td><span class="result-cell" id="resultEnds">-</span></td>
+                <td><span class="status-cell" id="statusEnds">-</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="strings.js"></script>
+
+</body>
+</html>
