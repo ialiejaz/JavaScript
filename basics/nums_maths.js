@@ -1,5 +1,6 @@
 const score = 100
 console.log(score);
+console.log(score.toFixed(3));
 
 const totalScore = new Number(150)
 const displayScore = totalScore.toString()
