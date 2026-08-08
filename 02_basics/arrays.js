@@ -32,12 +32,13 @@ console.log(typeof myArr); //output: string
 console.log(`Original array = ${arr}`);
 
 console.log(`Sliced array = ${arr.slice(1,3)}`)
-console.log(`After slice ${arr}`);
+console.log(`After slice ${arr}`); //it does not manipulate the original array
 
 // Splice
 
 console.log(`Spliced array = ${arr.splice(1,3)}`)
 console.log(`After splice ${arr}`); // it manpulates the original array.
+
 
 
 
