@@ -51,8 +51,15 @@ const ytUser = [
     },
 ]
 
-console.log(ytUser[1].handle);
-console.log(ytUser[2].chanel_name);
+// console.log(ytUser[1].handle);
+// console.log(ytUser[2].chanel_name);
 
+// access keys,values and entries within an object
 
+console.log(Object.keys(instaUser));
+console.log(Object.values(instaUser));
+console.log(Object.entries(instaUser));
 
+//check if a property exists:
+
+console.log(fbUser.hasOwnProperty('email'));
