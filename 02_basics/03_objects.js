@@ -22,7 +22,7 @@ console.log(name);
 // it stands for JavaScript Object Notation (JSON), and is needed in every language for api handling
 
 {
-    "name":"ahamad",
+    "name":"ahamad"
     "age":"21",
     "subject": "DSA"
 }
