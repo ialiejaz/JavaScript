@@ -18,4 +18,4 @@ if (true){
     
 }
 let a = 50
-console.log("outer: ",a) // will execute (global scope) code
+console.log("Outer: ",a) // will execute (global scope) code
